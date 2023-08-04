@@ -2,8 +2,8 @@
 
 //String Biasa single qouto (')//
 echo 'Name : ';
-    echo 'Feri Riski';
-    echo "\n";
+        echo 'Feri Riski';
+        echo "\n";
 
 //String agar bisa enter dan tab gunakan (") //
 echo 'Name : ';
