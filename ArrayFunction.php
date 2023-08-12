@@ -27,3 +27,11 @@ var_dump(array_keys($data));
 
 //array_values()      Mengambil semua values milik array
 var_dump(array_values($data));
+
+
+$person  = [
+    "first_name" => "Not",
+    "last_name" => "Astronot",
+];
+var_dump(array_keys($person));
+var_dump(array_values($person));
