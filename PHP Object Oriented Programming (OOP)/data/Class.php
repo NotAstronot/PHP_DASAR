@@ -43,6 +43,15 @@ class Person
             echo "Hi $name, My Name is $this->name" . PHP_EOL;
         }
     }
+
+
+    //Destructor 
+    //Destructor adalah function yang akan dipanggil ketika object dihapus dari memory
+    //Dalam penggunaan sehari-hari, ini misal cocok untuk menutup koneksi ke database atau menutup proses menulis ke file, sehingga tidak terjadi memory leak
+    function __destruct()
+    {
+        echo "Object person $this->name is destructed" . PHP_EOL;
+    }
 }
 
 
