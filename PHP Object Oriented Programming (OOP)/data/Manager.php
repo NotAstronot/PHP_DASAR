@@ -6,10 +6,14 @@ class Manager
 
     function sayHello(string $name): void
     {
-        echo "Hello $name, may name is $this->name" . PHP_EOL;
+        echo "Hello $name, may name is Manager $this->name" . PHP_EOL;
     }
 }
 
 class VicePresident extends Manager
 {
+    function sayHello(string $name): void
+    {
+        echo "Hello $name, may name is VP $this->name" . PHP_EOL;
+    }
 }
