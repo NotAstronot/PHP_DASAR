@@ -6,6 +6,7 @@ interface HelloWorld
 }
 
 
+
 $helloWorld = new class implements HelloWorld
 {
 
