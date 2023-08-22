@@ -6,27 +6,50 @@ class Zero
 
     public function __get($name)
     {
-        echo "Accessing property $name" . PHP_EOL;
-        return "Contoh";
+        return $this->properties[$name];
     }
 
     public function __set($name, $value)
     {
-        echo "Set proprty $name with value $value" . PHP_EOL;
+        $this->properties[$name] = $value;
     }
 
     public function __isset($name): bool
     {
-        echo "Isset $name" . PHP_EOL;
-        return false;
+        return isset($this->properties[$name]);
     }
 
     public function __unset($name)
     {
-        echo "Set proprty $name with value $value" . PHP_EOL;
+        unset($this->properties[$name]);
+    }
+
+    // Magic Function untuk Function Overloading
+    // __call Dieksekusi ketika memanggil function yang tidak tersedia
+    public function __call($name, $arguments)
+    {
+        $join = join(",", $arguments);
+        echo "Call function $name with arguments $join" . PHP_EOL;
+    }
+
+    // static __callStatic ( $name , $arguments ) : mixed
+    // Dieksekusi ketika memanggil static function yang tidak tersedia
+    public static function __callStatic($name, $arguments)
+    {
+        $join = join(",", $arguments);
+        echo "Call Static function $name with arguments $join" . PHP_EOL;
     }
 }
 
 $zero = new Zero();
-echo $zero->firstName . PHP_EOL;
-echo $zero->middleName . PHP_EOL;
+$zero->firstName = "Not";
+$zero->middleName = "Astronot";
+$zero->lastName = "Boy";
+
+echo "First Name: . $zero->firstName" . PHP_EOL;
+echo "Middle Name: . $zero->middleName" . PHP_EOL;
+echo "Last Name: . $zero->lastName" . PHP_EOL;
+
+
+$zero->sayHello("Not", "Astronot");
+Zero::sayHello("Not", "Astronot");
