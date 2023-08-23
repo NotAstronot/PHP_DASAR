@@ -46,9 +46,9 @@ $zero->firstName = "Not";
 $zero->middleName = "Astronot";
 $zero->lastName = "Boy";
 
-echo "First Name: . $zero->firstName" . PHP_EOL;
-echo "Middle Name: . $zero->middleName" . PHP_EOL;
-echo "Last Name: . $zero->lastName" . PHP_EOL;
+echo "First Name: . $zero->firstName \r\n";
+echo "Middle Name: . $zero->middleName \r\n";
+echo "Last Name: . $zero->lastName \r\n";
 
 
 $zero->sayHello("Not", "Astronot");
