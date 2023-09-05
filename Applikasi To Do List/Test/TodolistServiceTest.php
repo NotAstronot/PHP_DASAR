@@ -12,13 +12,13 @@ function testShowTodolist(): void
 {
     $todolistRepository = new TodolistRepositoryImpl();
     $todolistRepository->todolist[1] = new Todolist("Belajar PHP");
-    $todolistRepository->todolist[2] = "Belajar PHP OOP";
-    $todolistRepository->todolist[3] = "Belajar PHP database";
+    $todolistRepository->todolist[2] = new Todolist("Belajar PHP OOP");
+    $todolistRepository->todolist[3] = new Todolist("Belajar PHP database");
 
 
     $todolistService = new TodolistServiceImpl($todolistRepository);
 
-    $todolistService->showTodoList();
+    $todolistService->showTodolist();
 }
 
 function testAddTodolist(): void
@@ -26,10 +26,26 @@ function testAddTodolist(): void
     $todolistRepository = new TodolistRepositoryImpl();
 
     $todolistService = new TodolistServiceImpl($todolistRepository);
-    $todolistService->addTodolist()[1] = "Belajar PHP";
-    $todolistService->addTodolist[2] = "Belajar PHP OOP";
-    $todolistService->addTodolist[3] = "Belajar PHP database";
+    $todolistService->addTodolist("Belajar PHP");
+    $todolistService->addTodolist("Belajar PHP OOP");
+    $todolistService->addTodolist("Belajar PHP database");
 
-    $todolistService->showTodoList();
+    $todolistService->showTodolist();
 }
-testShowTodolist();
+
+function testRemoveTodolist(): void
+{
+    $todolistRepository = new TodolistRepositoryImpl();
+
+    $todolistService = new TodolistServiceImpl($todolistRepository);
+    $todolistService->addTodolist("Belajar PHP");
+    $todolistService->addTodolist("Belajar PHP OOP");
+    $todolistService->addTodolist("Belajar PHP database");
+
+    $todolistService->showTodolist();
+
+    $todolistService->removeTodolist(5);
+    $todolistService->showTodolist();
+}
+
+testRemoveTodolist();

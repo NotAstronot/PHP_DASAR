@@ -25,13 +25,13 @@ namespace Service {
             $this->todolistRepository = $todolistRepository;
         }
 
-        function showTodoList(): void
+        function showTodolist(): void
         {
 
             echo "TODOLIST" . PHP_EOL;
             $todoList = $this->todolistRepository->findAll();
             foreach ($todoList as $number => $value) {
-                echo "$number. $value" . PHP_EOL;
+                echo "$number. " . $value->getTodo() . PHP_EOL;
             }
         }
 
@@ -44,6 +44,11 @@ namespace Service {
 
         function removeTodolist(int $number): void
         {
+            if ($this->todolistRepository->remove($number)) {
+                echo "Sukses Menghapus Todolist" . PHP_EOL;
+            } else {
+                echo "Gagal menghapus Todolist" . PHP_EOL;
+            }
         }
     }
 }

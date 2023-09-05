@@ -16,19 +16,28 @@ namespace Repository {
     class TodolistRepositoryImpl implements TodolistRepository
     {
 
-        private array $todolist = array();
+        public array $todolist = array();
 
         function save(Todolist $todolist): void
         {
             $number = sizeof($this->todolist) + 1;
-
             $this->todolist[$number] = $todolist;
         }
 
-        function remove(int $number): bool
 
+        function remove(int $number): bool
         {
-            // TODO: Implement remove
+            if ($number > sizeof($this->todolist)) {
+                return false;
+            }
+
+            for ($i = $number; $i < sizeof($this->todolist); $i++) {
+                $this->todolist[$i] = $this->todolist[$i + 1];
+            }
+
+            unset($this->todolist[sizeof($this->todolist)]);
+
+            return true;
         }
 
         function findAll(): array

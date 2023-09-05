@@ -5,11 +5,11 @@
 //menampilakan To do di list 
 function showTodoList()
 {
-    global $todoList;
+    global $todolist;
 
     echo "TODOLIST" . PHP_EOL;
 
-    foreach ($todoList as $number => $value) {
+    foreach ($todolist as $number => $value) {
         echo "$number. $value" . PHP_EOL;
     }
 }
