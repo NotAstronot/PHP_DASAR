@@ -5,8 +5,11 @@ namespace Helper {
     class InputHelper
     {
 
-        function input(string $info): string
+        static function input(string $info): string
         {
+            echo "$info :";
+            $result = fgets(STDIN);
+            return trim($result);
         }
     }
 }

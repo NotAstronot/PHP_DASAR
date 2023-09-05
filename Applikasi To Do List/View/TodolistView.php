@@ -3,7 +3,7 @@
 namespace View {
 
     use Service\TodolistService;
-
+    use Helper\InputHelper;
 
     class TodolistView
     {
@@ -24,12 +24,12 @@ namespace View {
                 echo "2. Hapus Todo" . PHP_EOL;
                 echo "x. Keluar" . PHP_EOL;
 
-                $pilihan = input("Pilih");
+                $pilihan = inputHelper::input("Pilih");
 
                 if ($pilihan == "1") {
-                    viewAddTodolist();
+                    $this->adadTodolist();
                 } else if ($pilihan == "2") {
-                    viewRemoveTodoList();
+                    $this->RemoveTodolist();
                 } else if ($pilihan == "x") {
                     break;
                 } else {
