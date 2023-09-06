@@ -1,7 +1,5 @@
 <?php
 
-
-
 //menampilakan To do di list 
 function showTodoList()
 {
