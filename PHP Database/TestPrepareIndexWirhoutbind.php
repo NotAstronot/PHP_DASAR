@@ -7,11 +7,9 @@ $connection = getConnection();
 $username = "admin";
 $password = "admin";
 
-$sql = "SELECT * FROM admin WHERE username = :username AND password = :password";
+$sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
 $statment = $connection->prepare($sql);
-$statment->bindParam("username", $username);
-$statment->bindParam("password", $password);
-$statment->execute();
+$statment->execute([$username, $password]);
 
 $success = false;
 $find_user = null;
