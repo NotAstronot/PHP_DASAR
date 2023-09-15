@@ -3,6 +3,7 @@
 namespace Repository {
 
     use Entity\Todolist;
+    use PDO;
 
     interface TodolistRepository
     {
@@ -18,10 +19,21 @@ namespace Repository {
 
         public array $todolist = array();
 
+        private \PDO $connection;
+
+        public function __construct(PDO $connection)
+        {
+            $this->connection = $connection;
+        }
+
         function save(Todolist $todolist): void
         {
-            $number = sizeof($this->todolist) + 1;
-            $this->todolist[$number] = $todolist;
+            // $number = sizeof($this->todolist) + 1;
+            // $this->todolist[$number] = $todolist;
+
+            $sql = "INSERT INTO todolist(todo) VALUES (?)";
+            $statment = $this->connection->prepare($sql);
+            $statment->execute([$todolist->getTodo()]);
         }
 
 
