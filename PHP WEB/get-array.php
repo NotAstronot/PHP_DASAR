@@ -1,5 +1,11 @@
 <?php
-$say = "Hello " . htmlspecialchars($_GET['name']);
+
+$numbers = $_GET['number'];
+$total = 0;
+
+foreach ($numbers as $number) {
+    $total += $number;
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +14,11 @@ $say = "Hello " . htmlspecialchars($_GET['name']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GET</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <h1><?= $say ?></h1>
+    <h1> Total = <?= $total ?> </h1>
 </body>
 
 </html>
