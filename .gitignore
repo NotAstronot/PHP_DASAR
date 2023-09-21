@@ -1,1 +1,4 @@
 php_composer/
+Learning-php-composer-library/vendor/
+composer.json
+composer.lock
