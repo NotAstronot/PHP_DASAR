@@ -1,0 +1,19 @@
+{
+    "name": "learningphpcomposer/learning-php-composer-hello",
+    "description": "Library Composer Hello",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Learningphpcomposer\\Learning\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NotAstronot",
+            "email": "feririski409@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=8.0"
+    }
+}

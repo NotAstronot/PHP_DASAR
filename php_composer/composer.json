@@ -1,0 +1,22 @@
+{
+    "name": "learning/php-composer",
+    "description": "Learning PHP Composer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "LearningPhpComposer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NotAstronot",
+            "email": "feririski409@gmail.com"
+        }
+    ],
+    
+    "require": {
+        "php": ">=8.0",
+        "learningphpcomposer/learning-php-composer-hello" : "2.0.0",
+        "monolog/monolog" : "3.4.0"
+    }
+}
